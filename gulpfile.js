@@ -23,7 +23,7 @@ function getFileOriginalName(filename) {
 }
 
 function getFilePureName(dirname) {
-    const dirs = dirname.split('\\');
+    const dirs = dirname.split(path.sep);
     return dirs[dirs.length - 1];
 }
 
