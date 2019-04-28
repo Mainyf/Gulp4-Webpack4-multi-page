@@ -42,7 +42,7 @@ function stat(path) {
     })
 }
 
-const appSrc = path.resolve(__dirname, '/src');
+const appSrc = path.resolve(__dirname, 'src');
 const appNodeModules = path.resolve(__dirname, 'node_modules');
 
 module.exports = {
