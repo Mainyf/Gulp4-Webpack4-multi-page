@@ -38,12 +38,16 @@ gulp.task('script', async () => {
         }))
         .pipe(webpack(webpackConfig))
         .pipe(rename((path) => {
-            path.basename = getFilePureName(path.dirname)
+            if(path.dirname !== '.') {
+                path.basename = getFilePureName(path.dirname)
+            }
         }))
         .pipe(gulp.dest(`./${getOutputFolderName()}`))
         .pipe(uglify())
         .pipe(rename((path) => {
-            path.basename = `${getFilePureName(path.dirname)}.min`;
+            if(path.dirname !== '.') {
+                path.basename = `${getFilePureName(path.dirname)}.min`;
+            }
         }))
         .pipe(sourcemaps.init())
         .pipe(sourcemaps.write(''))
